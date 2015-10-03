@@ -6,19 +6,19 @@
 <body>
 <div class="wrapper">
 	<!-- Our Main Video Element -->
-	<div id="webCam">
-		<div id="alHtmlWebcamContainer" style="position: absolute; top: 0px; left: 0px;"><video id="alHtmlWebcamVideo" width="780" height="584" autoplay="" style="transform: scaleX(-1);"></video></div>
-	</div>
+	<div id="webCam"></div>
 	<a href="#" onclick="App.start('glasses');">Glasses!</a>
 	<a href="#" onclick="App.start('hat');">hat!</a>
 	<a href="#" onclick="App.start('blur');">blur!</a>
 	<a href="#" onclick="App.start('greenscreen');">greenscreen!</a>
 	<br>
 	<!-- Out Canvas Element for output -->
-	<canvas id="output"  height="426" width="515" ></canvas>
-
+	<div class="output-container">
+		<canvas id="output"  height="426" width="515" ></canvas>
+		<div class="initializing-webcam">Please allow your webcam</div>
+	</div>
 	<div class="colours" style="display:block;">
-		<div id="red">
+		<div id="red"> 
 			red
 			<input type="range" min=0 max=255 value=190 class="min">
 			<input type="range" min=0 max=255 value=240 class="max">
@@ -38,11 +38,12 @@
 </div>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/avatar/utils.js"></script>
+<!-- <script type="text/javascript" src="scripts/avatar/utils.js"></script>
 <script type="text/javascript" src="scripts/avatar/WebcamController.js"></script>
 <script type="text/javascript" src="scripts/ccv.js"></script>
 <script type="text/javascript" src="scripts/face.js"></script>
 <script type="text/javascript" src="scripts/scripts.js"></script>
-<script type="text/javascript" src="scripts/stackblur.js"></script>
+<script type="text/javascript" src="scripts/stackblur.js"></script> -->
+<script type="text/javascript" src="scripts/compiled_all.js"></script>
 </body>
 </html>

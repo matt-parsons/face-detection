@@ -1,5 +1,8 @@
 # face-detection
 
+Requires Node & Grunt to run locally.
+
+
 This demo uses the CCV Javascript Face Detection Library.
 
 -------------------------------------------------------------------------------

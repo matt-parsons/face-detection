@@ -19,7 +19,7 @@ h1 {
 }
 
 p {
-	text-align:center;
+	text-align:center; 
 	color: #392C44;
 	margin-bottom: 20px;
 	margin-top:20px;
@@ -33,11 +33,32 @@ a {
 
 
 canvas {
+	
 }
 
 #webCam {
-	position: relative;
+	position: relative;	
 	width: 780px;
 	height: 584px;
 	display: none;
+}
+#output {
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+}
+
+.output-container {
+	width: 426px;
+	height: 515px;
+	position: relative;
+}
+
+.initializing-webcam {
+	position: absolute;
+	top: 30%;
+	width: 100%;
+	text-align: center;
 }

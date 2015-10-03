@@ -21,14 +21,14 @@ var App = {
 
 	drawToCanvasALabs : function(video) {
 		console.log('drawToCanvassss');
-		console.log(video);
 		App.video.src = video;
-		App.start();
+		App.start('glasses');
 
 	},
 
 
 	drawToCanvas : function(effect) {
+		console.log('drawToCanvas');
 		var video = App.video,
 			ctx = App.ctx,
 			canvas = App.canvas,
@@ -115,26 +115,15 @@ var App = {
 
 	start : function(effect) {
 		console.log('start');
+		console.log(App.playing);
 		if(App.playing) { clearInterval(App.playing); }
 		App.playing = setInterval(function() {
 			App.drawToCanvas(effect);
-		},50);
+		},1);
 	}
 };
 
 App.init = function() {
-	// Prep the document
-	App.video = document.querySelector('video');
-	
-	App.glasses = new Image();
-	App.glasses.src = "i/glasses.png";
-
-	App.hat = new Image();
-	App.hat.src = "i/hat.png";
-
-	App.canvas = document.querySelector("#output");
-	App.ctx = this.canvas.getContext("2d");
-
 
 	// Finally Check if we can run this puppy and go!
 	// if (navigator.getUserMedia) {
@@ -145,7 +134,9 @@ App.init = function() {
 		position: {top: 0, left: 0},
 		callbacks: {
 			ready: function() {
+				$('.initializing-webcam').fadeOut();
 				console.log('cam ready');
+				App.initTwo();
 			},
 			initError: function() {
 				console.log('cam error');
@@ -159,6 +150,24 @@ App.init = function() {
 
 
 };
+
+App.initTwo = function() {
+	// Prep the document
+	App.video = document.querySelector('video');
+	console.log(App.video);
+	
+	App.glasses = new Image();
+	App.glasses.src = "i/glasses.png";
+
+	App.hat = new Image();
+	App.hat.src = "i/hat.png";
+
+	App.canvas = document.querySelector("#output");
+	App.ctx = this.canvas.getContext("2d");
+
+	App.drawToCanvasALabs(App.video.src);
+
+}
 
 
 document.addEventListener("DOMContentLoaded", function() {
